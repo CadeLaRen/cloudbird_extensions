@@ -1,7 +1,7 @@
 from distutils.core import setup
-from Cython.Build import cythonize
+from distutils.extension import Extension
 
 setup(
     name = "CloudBird Extensions",
-    ext_modules = cythonize('*.pyx'),  # accepts a glob pattern
+    ext_modules = [Extension("cloudbird_extensions", ["polygon.c", "smoothaccel.c"],
 )
